@@ -5,20 +5,36 @@ decide what to list, how to price it, and what sells fastest.
 
 **Pipeline:** Depop CSV → Python (pandas) cleaning → BigQuery → SQL
 
-## Key finding
-Across 35 completed sales (Jun–Aug 2026), 3 pairs of shoes brought in $130,
-65% as much revenue as 21 tops ($201), and sold in 5.3 days on average
-versus 12 days for tops.
+## Key findings (51 completed sales, Jun–Nov 2026)
 
-| Category | Sold | Revenue | Avg price | Avg days to sell |
+**1. Higher-priced items earn most of the revenue without selling slower.**
+7 items priced $20+ brought in $236.80, about 42% of revenue from 14% of
+sales. Items under $6 took the longest to sell (35 days on average) versus
+25 days for $10–19.99 items. Underpricing didn't speed up sales.
+
+| Price band | Sold | Revenue | Avg days to sell |
+|---|---|---|---|
+| Under $6 | 12 | $55.01 | 35.3 |
+| $6–9.99 | 24 | $174.85 | 29.3 |
+| $10–19.99 | 8 | $92.70 | 25.4 |
+| $20+ | 7 | $236.80 | 28.3 |
+
+**2. Typical tops sell in about 3 weeks.** The median is 19 days; the average
+(35.9) is pulled up by one top that sat for 136 days, so I report the median.
+
+| Category | Sold | Revenue | Median days | Longest |
 |---|---|---|---|---|
-| Tops | 21 | $200.90 | $9.57 | 12.0 |
-| Footwear | 3 | $130.00 | $43.33 | 5.3 |
-| Bottoms | 6 | $52.30 | $8.72 | 10.7 |
-| Accessories | 5 | $30.30 | $6.06 | 4.4 |
+| Tops | 35 | $296.76 | 19 | 136 |
+| Footwear | 3 | $130.00 | 4 | 11 |
+| Bottoms | 6 | $52.30 | 1 | 30 |
+| Coats and jackets | 2 | $50.00 | 53 | 116 |
+| Accessories | 5 | $30.30 | 4 | 8 |
 
-**Decision:** prioritize sourcing and listing footwear; bundle or reprice
-tops that sit longer than two weeks.
+**3. Refunds:** 6 of 57 sales (about 11%) were refunded, including 2 of 9
+sales over $20.
+
+**Decisions:** list fewer, higher-value items; add detailed measurements and
+condition photos to $20+ listings to cut refunds; list jackets in fall.
 
 ## Data decisions
 See [docs/decision_log.md](docs/decision_log.md): handling items with no
